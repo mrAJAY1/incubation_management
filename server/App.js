@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const redis = require("redis");
+const rediscl = redis.createClient();
 const db = mongoose.connection;
 
 // importing router files
@@ -19,6 +21,9 @@ const app = express();
 // Adding express.json to parse json file into js objects
 app.use(express.json());
 
+// Adding cookie parser
+app.use(cookieParser(process.env.COOKIE_KEY));
+
 // Adding helmet to enhance security
 app.use(helmet());
 
@@ -31,6 +36,17 @@ app.use(cors({ origin: "http://localhost:3000" }));
 // Setting up routes files
 app.use("/", userRouter);
 app.use("/admin", adminRouter);
+
+// Connecting to redis
+rediscl.connect();
+
+rediscl.on("connect", function () {
+  console.log("Redis plugged in.");
+});
+
+rediscl.on("error", (err) => {
+  console.log("Error" + err);
+});
 
 // Initializing connection to mongodb
 mongoose.connect(process.env.MONGO_URL);

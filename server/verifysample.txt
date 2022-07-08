@@ -1,0 +1,31 @@
+else if (redisToken.expires<new Date().getTime()) {
+            const newRefreshToken = await genRefresh({
+              id: decoded.id,
+              email: decoded.email,
+              name: decoded.name,
+            });
+            sendRefreshCookie(res, newRefreshToken);
+
+            const redisMaxAge = new Date(
+              new Date().getTime() + parseInt(process.env.RT_COOKIE_LIFE)
+            );
+            redis.set(
+              decoded.id,
+              JSON.stringify({
+                refreshToken: newRefreshToken,
+                expires: redisMaxAge,
+              })
+            );
+
+            const newAccessToken = await genAccess({
+              id: decoded.id,
+              email: decoded.email,
+              name: decoded.name,
+            });
+
+            sendAccessCookie(res, newAccessToken);
+            next();
+          }
+
+          
+
