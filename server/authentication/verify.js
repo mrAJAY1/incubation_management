@@ -29,9 +29,6 @@ module.exports = {
             err ? null : val ? val : null;
           });
           redisToken = await JSON.parse(redisToken);
-
-          console.log(redisToken.refreshToken);
-          console.log(refreshToken);
           if ( !redisToken||redisToken.refreshToken !== refreshToken||redisToken.expires<new Date().getTime()) {
             return res
               .status(401)

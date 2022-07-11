@@ -57,15 +57,15 @@ function SignupForm() {
             }).then(async res => {
                 if (res.status === 200) {
                     navigate('/')
-                    return
                 }
                 if (res.status === 409) {
                     const data = await res.json()
-                    setFormErr({ ...formErr, email: data.message })
-                    setTimeout(() => {
-                        setLoading(false)
-                    }, 500);
+                     setFormErr({ ...formErr, email: data.message })
+                  
                 }
+                setTimeout(() => {
+                    setLoading(false)
+                }, 500);
 
 
             }).catch((err) => {
@@ -77,12 +77,9 @@ function SignupForm() {
     return (
         <Container style={{ height: '100vh' }} md={'fluid'}>
             <Row xs={' justify-content-center align-items-center h-100'}>
-
                 <Col xs={"10 p-5"} md={"8"} lg={'6'} xxl={'5'} >
-
                     <Form onSubmit={handleSubmit} style={{ width: '100%', position: 'relative' }}>
                         <div> <h3 className={`mb-5 text-center ${SignupStyle.loginHeader}`}>Signup</h3>
-
                         </div>
                         <Form.Group className="mb-4" controlId="formBasicEmail">
                             <div className={SignupStyle.form}>
