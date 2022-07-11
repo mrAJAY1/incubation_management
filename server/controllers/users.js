@@ -35,13 +35,13 @@ module.exports = {
       sendAccessCookie(res, accessToken);
       sendRefreshCookie(res, refreshToken);
 
-      res.status(200).json({ status: "ok" });
+      res.status(200).json({message: "ok" });
     } catch (err) {
       if (err.message === "user exists") {
-        res.status(409).json({ status: "failed", cause: err.message });
+        res.status(409).json({ message: err.message });
         return;
       }
-      res.status(500).json({ status: "failed", cause: err.message });
+      res.status(500).json({message: err.message });
     }
   },
 
