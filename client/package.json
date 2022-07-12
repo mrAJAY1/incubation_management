@@ -11,6 +11,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-jwt": "^1.1.6",
     "react-password-strength-bar": "^0.4.1",
     "react-router-dom": "^6.3.0",

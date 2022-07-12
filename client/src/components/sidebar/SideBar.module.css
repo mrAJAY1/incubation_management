@@ -1,0 +1,104 @@
+.sideBar {
+    padding-left: 0.8rem;
+    background-color: white;
+    height: 80px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.menuBars{
+    margin-left:.8rem;
+    font-size:2rem;
+    background:none;
+}
+.sideBar:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px; 
+}
+.menuBars:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-0.5px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(1px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(1px, 0, 0);
+    }
+  }
+
+.navMenu{
+    z-index: 10000000;
+    padding-left: 0.8rem !important;
+    background-color: white;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start !important;
+    position: fixed;
+    top: 0%;
+    left: -100%;
+    transition: 850ms;
+}
+.active{
+    left: 0% !important;
+    transition: 350ms !important;
+}
+.navText{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+.navText a {
+    border-right: 3px solid aqua !important;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+.navText a:hover{
+    
+    background-color: aqua;
+}
+.navMenuItems{
+    
+    width: 100%;
+}
+.navbarToggle{
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    
+}
+span{
+    margin-left: 16px;
+}
+ul,li{
+    
+    padding: 0 !important;
+}
