@@ -1,11 +1,10 @@
-*{
-    overflow: hidden;
-}
+
 .signupContainer{
-    position: absolute;
+    overflow: hidden;
+    position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: aqua;
+    background-color: #00ffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,4 +22,7 @@
         height: 250vh;
         width: 100vw;
     }
+}
+.errorVisible {
+    visibility: visible;
 }

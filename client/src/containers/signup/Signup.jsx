@@ -4,11 +4,13 @@ import Style from './SignupCTR.module.css'
 function Signup() {
   return (
     <div className={Style.signupContainer}>
-      <div className = {Style.innerContainer}>
+      <div className={Style.innerContainer}></div>
+      <div style={{ zIndex: '100', width: '100%' }}>
+        <SignupForm />
       </div>
-              <SignupForm />
+
     </div>
-   
+
   )
 }
 

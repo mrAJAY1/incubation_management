@@ -31,7 +31,7 @@ app.use(helmet());
 app.use(morgan("combined"));
 
 // configuring cors
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000",credentials:true, methods:['GET','POST']}));
 
 // Setting up routes files
 app.use("/", userRouter);

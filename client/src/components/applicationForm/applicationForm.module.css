@@ -1,0 +1,104 @@
+input:focus {
+    border-color: aqua !important;
+    box-shadow: 0 0 0 .25rem rgba(0, 255, 255, 0.349) !important;
+}
+
+textarea:focus {
+    border-color: aqua !important;
+    box-shadow: 0 0 0 .25rem rgba(0, 255, 255, 0.349) !important;
+}
+
+.groups {
+    display: flex;
+    flex-direction: column;
+}
+.asterisk{
+    color: red;
+}
+
+input {
+    width: 100% !important;
+}
+
+.headerText {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonfx {
+    color: white;
+    /* button text color */
+    outline: none;
+    background: transparent;
+    border: none;
+    letter-spacing: 0.0625em;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    font: bold 16px 'Bitter', sans-serif;
+    line-height: 2;
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.buttonfx:before,
+.buttonfx:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: aqua;
+    z-index: -1;
+    transform: translate3D(0, -100%, 0);
+    transition: all .5s;
+}
+
+.buttonfx:before {
+    background: black;
+    z-index: -2;
+    transform: translate3D(0, 0, 0);
+}
+
+.buttonfx:hover {
+    color: black;
+}
+
+.buttonfx:hover:after {
+    transform: translate3D(0, 0, 0);
+    transition: all .5s;
+}
+
+.slideleft:after {
+    top: 0;
+    z-index: -1;
+    transform: translate3D(-101%, 0, 0);
+}
+
+.slideleft:hover:after {
+    transform: translate3D(0, 0, 0);
+    transition: all .5s;
+}
+
+/* //// Slide Corner  //// */
+
+.slidebottomleft:after {
+    transform: translate3D(-100%, 100%, 0);
+}
+
+.slidebottomleft:hover:after {
+    transform: translate3D(0, 0, 0);
+    transition: all .5s;
+}
+
+.bouncein:hover:before,
+.bouncein:hover:after {
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66) !important;
+}

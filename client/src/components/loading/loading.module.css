@@ -1,0 +1,77 @@
+
+.containerDiv{
+    z-index: 1000;
+    position: absolute !important;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.containerDiv {
+    background: rgba(224, 224, 224, 0.048);
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .containerDiv {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+  }
+.ldsEllipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 15px;
+  }
+  .ldsEllipsis div {
+    position: absolute;
+    top: 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: aqua;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .ldsEllipsis div:nth-child(1) {
+    left: 8px;
+    animation: ldsEllipsis1 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(2) {
+    left: 8px;
+    animation: ldsEllipsis2 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(3) {
+    left: 32px;
+    animation: ldsEllipsis2 0.6s infinite;
+  }
+  .ldsEllipsis div:nth-child(4) {
+    left: 56px;
+    animation: ldsEllipsis3 0.6s infinite;
+  }
+  @keyframes ldsEllipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes ldsEllipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes ldsEllipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  

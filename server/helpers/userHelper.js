@@ -6,7 +6,7 @@ module.exports = {
   signup: async (body) => {
     const exists = await Model.exists({ email: body.email });
     if (exists) {
-     throw Error("user exists");
+     throw Error("email is already in use");
     }
     const data = new Model(body);
 

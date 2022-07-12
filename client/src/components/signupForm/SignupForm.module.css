@@ -103,7 +103,6 @@
 .form input:focus+.labelName::after,
 .form input:valid+.labelName::after {
     transform: translateX(0%);
-
 }
 .form input {
     color: black;
@@ -123,4 +122,11 @@ input[type=number]{
     font-size: 0.8rem !important;
     position: relative;
     color: black;
+}
+.strengthBar{
+    float: right;
+    width: 30%;
+}
+.error{
+    color: red;
 }

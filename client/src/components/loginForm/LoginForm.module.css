@@ -28,10 +28,12 @@
     }
 
 }
-.bottomLink{
+
+.bottomLink {
     font-size: 0.8rem !important;
     color: black;
 }
+
 .subBtn:after {
     content: "";
     position: absolute;
@@ -129,4 +131,8 @@
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 12px;
+}
+
+.error {
+    color: red;
 }
