@@ -37,7 +37,7 @@ module.exports = {
 
       res.status(200).json({message: "ok" });
     } catch (err) {
-      if (err.message === "user exists") {
+      if (err.message === "email is already in use") {
         res.status(409).json({ message: err.message });
         return;
       }

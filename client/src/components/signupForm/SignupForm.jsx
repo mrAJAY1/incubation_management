@@ -66,8 +66,6 @@ function SignupForm() {
                 setTimeout(() => {
                     setLoading(false)
                 }, 500);
-
-
             }).catch((err) => {
                 console.log(err.message)
             })

@@ -6,14 +6,17 @@ import Signup from "./pages/Signup";
 import { Loader } from "./components";
 import { useContext } from "react";
 import { ContextLoader } from "./Contexts/LoaderContext";
+import Application from "./pages/Application";
 function App() {
   const { isLoading ,setLoading} = useContext(ContextLoader);
   return (
     <>
       {isLoading && <Loader innerText={"Processing"} />}
       <Routes>
+        <Route path='/' element={<Application/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+
       </Routes>
     </>
   );
