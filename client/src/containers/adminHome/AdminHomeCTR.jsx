@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import { Slot } from '../../../../server/Model'
+import { Route, Routes, useNavigate } from 'react-router-dom' 
 import { SideBar } from '../../components'
 import RecordList from '../../components/RecordList/RecordList'
+import Slots from '../../components/slots/Slots'
 import DashboardCTR from '../dashboard/DashboardCTR'
 
 function AdminHomeCTR() {
@@ -33,7 +33,7 @@ function AdminHomeCTR() {
         <Routes>
           <Route exact path='/progress' element={<RecordList/>}/>
           <Route path='/dashboard' element={<DashboardCTR />} />
-          <Route path='/slots' element={<Slot/>}/>
+          <Route path='/slots' element={<Slots/>}/>
         </Routes>
       </div>
 

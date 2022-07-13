@@ -1,6 +1,11 @@
 const userHelper = require("../helpers/userHelper");
 
 module.exports = {
+  getapproved: async(req,res) => {
+    const response = await userHelper.getapproved()
+    console.log(response)
+    res.status(200).json({status:'success',response})
+  },
   getAllSlots: async (req, res) => {
     try {
       const response = await userHelper.getAllSlots();

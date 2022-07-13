@@ -64,6 +64,10 @@ const userSchema = new mongoose.Schema(
         type: String,
       },
     },
+    isBooked:{
+      type:Boolean,
+      default:false
+    }
   },
   { timestamps: true }
 );

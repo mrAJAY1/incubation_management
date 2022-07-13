@@ -5,6 +5,11 @@ const { genAccess, genRefresh } = require("../authentication/token_generator");
 const { Slot } = require("../Model");
 const ObjectId = mongoose.Types.ObjectId;
 module.exports = {
+  getapproved: async () => {
+    const data = await Model.find({status:'approved'}).lean()
+
+    return data;
+  },
   signup: async (body) => {
     const exists = await Model.exists({ email: body.email });
     if (exists) {
@@ -93,7 +98,7 @@ module.exports = {
   },
 
   getHome: async (id) => {
-    console.log(id);
+
     const user = await Model.aggregate([
       {
         $match: {
@@ -143,7 +148,6 @@ module.exports = {
           { status: "booked" },
         ],
       }).sort({ createdAt: -1 });
-      console.log(data);
       return data;
     } catch (err) {
       throw Error(err.message);
@@ -178,9 +182,10 @@ module.exports = {
     }
   },
   bookSlots: async (body) => {
+   
     try {
-      const data = await Model.updateOne(
-        { _id: body._id },
+      const data = await Slot.updateOne(
+        { slot: body.id ,section:body.section},
         {
           $set: {
             userId: body.uId,
@@ -188,6 +193,7 @@ module.exports = {
           },
         }
       );
+      await Model.updateOne({_id:body.uId},{$set:{isBooked:true}})
     } catch (err) {
       throw Error(err.message);
     }

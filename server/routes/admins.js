@@ -8,8 +8,9 @@ router.get("/logout", verifyAdmin, manager.logout);
 router.get("/reports", verifyAdmin, manager.recordList);
 router.post("/reject", verifyAdmin, manager.rejectApp);
 router.post("/approve", verifyAdmin, manager.approveApp);
-router.get("/getSlots", verifyAdmin, manager.getAllSlots);
-router.post("/bookSlot", verifyAdmin, manager.bookSlot);
-router.post("/removeSlot", verifyAdmin, manager.removeSlot);
+router.get('/getapproved',verifyAdmin,manager.getapproved)
+router.get("/getslots", verifyAdmin, manager.getAllSlots);
+router.post("/bookslot", verifyAdmin, manager.bookSlot);
+router.post("/removeslot", verifyAdmin, manager.removeSlot);
 
 module.exports = router;

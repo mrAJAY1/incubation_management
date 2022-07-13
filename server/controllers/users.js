@@ -24,7 +24,6 @@ module.exports = {
   submitForm: async (req, res) => {
     const { body } = req;
     const sender = req.decoded.id;
-    console.log(body)
     try {
       await userHelper.submitForm(sender, {
         

@@ -13,7 +13,7 @@ module.exports = {
     console.log(process.env.AT_COOKIE_LIFE)
     const token = await jwt.sign(claims, process.env.REFRESH_KEY, {
       algorithm: process.env.JWT_ALGO,
-      expiresIn: '14d',
+      expiresIn: process.env.RT_LIFE,
     });
     return token;
   },
