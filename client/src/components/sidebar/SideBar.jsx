@@ -9,14 +9,11 @@ import Style from './SideBar.module.css'
 
 function SideBar() {
   const [sideBar, setSideBar] = useState(false)
-  const [lilBar,setLilBar] = useState(true)
   const showSideBar = () => {
-    setLilBar(!lilBar)
     setSideBar(!sideBar) 
   }
   const [isMobile, setMobile] = useState(document.body.clientWidth <= 498);
   useEffect(() => {
-    console.log('hel')
     if(isMobile)
     setSideBar(false)
     else
@@ -43,7 +40,7 @@ function SideBar() {
           {SideBarData.map((item, index) => {
             return (
               <li className={item.cName} key={index}>
-                <Link onClick={showSideBar} to={item.path}>{item.icon}</Link>
+                <Link onClick={item.click&&item.click} to={item.path}>{item.icon}</Link>
                {sideBar&&<span>{item.title}</span>} 
               </li>
             )

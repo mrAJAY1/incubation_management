@@ -6,11 +6,9 @@
     justify-content:center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    background-color: white;
-}
+    height: 100%;}
 .containerDiv {
-    background: rgba(224, 224, 224, 0.048);
+    background: rgba(224, 224, 224, 0.048) !important;
   }
   
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {

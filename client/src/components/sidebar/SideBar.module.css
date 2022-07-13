@@ -1,10 +1,16 @@
 .sideBar {
     padding-left: 0.8rem;
-    background-color: white;
     height: 80px;
+    width: 100%;
     display: flex;
+    background-color: transparent;
     justify-content:flex-start;
     align-items: center;
+}
+@media(max-width:480px){
+    .navMenu{
+        width: 200px;
+    }
 }
 .menuBars{
     margin-left:.8rem;

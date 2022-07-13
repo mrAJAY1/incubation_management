@@ -45,10 +45,18 @@ function LoginForm() {
           password: formValue.password
         })
       }).then(async res => {
+
         if (res.status === 200) {
+          const data = await res.json();
+
+          if (data.response.role === 'admin') {
+            navigate('/admin/dashboard')
+            return
+          }
           navigate('/')
+
         }
-        if (res.status === 409) {
+        if (res.status === 404) {
           const data = await res.json()
           setFormErr({ ...formErr, email: data.message })
         }
@@ -76,7 +84,7 @@ function LoginForm() {
                 </label>
               </div>
             </Form.Group>
-            {typeof formErr.email !== 'undefined' && <p style={{position:'relative'}} className={LoginStyle.error}>{formErr.email}</p>}
+            {typeof formErr.email !== 'undefined' && <p style={{ position: 'relative' }} className={LoginStyle.error}>{formErr.email}</p>}
 
             <Form.Group className="mb-5" controlId="formBasicPassword">
               <div className={LoginStyle.form}>

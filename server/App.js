@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const morgan = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -28,7 +27,6 @@ app.use(cookieParser(process.env.COOKIE_KEY));
 app.use(helmet());
 
 // Adding morgan to log http requests
-app.use(morgan("combined"));
 
 // configuring cors
 app.use(cors({ origin: "http://localhost:3000",credentials:true, methods:['GET','POST']}));

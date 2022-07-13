@@ -1,16 +1,12 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { SideBar } from '../../components'
-import { Application } from '../../pages'
-import Signup from '../signup/Signup'
+import UserIndex from '../../components/userIndex/UserIndex'
+
 function HomeCTR() {
     return (
-        <>
-            <SideBar />
-            <Routes>
-                <Route path='/dashboard' element={<Signup/>}/>
-            </Routes>
-        </>
+        <div className='container-fluid'>
+            <div className="row justify-content-center align-items-center">
+                <UserIndex />
+            </div>
+        </div>
     )
 }
 

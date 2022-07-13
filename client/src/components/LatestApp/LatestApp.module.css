@@ -1,0 +1,13 @@
+.hero{
+    border-left: 0.5rem solid rgb(0, 255, 255);
+}
+.tableHero{
+   padding: .5rem;
+    background-color: white;
+}
+table.dataTable{
+    box-shadow: #bbbbbb 0px 0px 5px 0px
+}
+thead{
+    background-color: aqua;
+}
