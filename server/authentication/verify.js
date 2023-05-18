@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { default: Redis } = require("ioredis");
+require("dotenv").config();
 const redis = new Redis();
 const {
   sendAccessCookie,
